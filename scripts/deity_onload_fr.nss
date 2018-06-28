@@ -239,7 +239,59 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_TRAVEL);
         AddClericDomain(nDeity, DOMAIN_TRICKERY);
 
+    // Angarradh (greater goddess)
+    nDeity = AddDeity("Angarradh");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Angarradh_Avatar");
+        SetDeityGender(nDeity, GENDER_FEMALE);
+        SetDeityHolySymbol(nDeity, "Angarradh_Symbol");
+        SetDeityPortfolio(nDeity, "birth, defense, fertility, planting, spring, and wisdom");
+        SetDeitySpawnLoc(nDeity, "Angarradh_Start");
+        SetDeityTitle(nDeity, "elven god");
+        SetDeityTitleAlternates(nDeity, "Queen of Arvandor, The Triune Goddess, The One and the THree, and The Union of the Three");
+        SetDeityWeapon(nDeity, WEAPON_SPEAR);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL,  ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL,  ALIGNMENT_NEUTRAL);
+		AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+		AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_ELF);
+        AddClericRace(nDeity, RACIAL_TYPE_HALFELF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_CHAOS);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
+		AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
+		AddClericDomain(nDeity, DOMAIN_PLANT);
+
+    // Anhur (lesser deity)
+    nDeity = AddDeity("Anhur");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Anhur_Avatar");
+        SetDeityHolySymbol(nDeity, "Anhur_Symbol");
+        SetDeityPortfolio(nDeity, "war, conflict, physical prowess, thunder, rain");
+        SetDeitySpawnLoc(nDeity, "Anhur_Start");
+        SetDeityTitleAlternates(nDeity, "General of the Gods, Champion of the Physical Prowess, The Falcon of War, Supreme Marshall of All Armies, and God of War, Thunder, Rain, and Storms");
+        SetDeityWeapon(nDeity, WEAPON_FALCHION);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_STRENGTH);
+        AddClericDomain(nDeity, DOMAIN_WAR);
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+			
     // Arvoreen (intermediate god)
     nDeity = AddDeity("Arvoreen");
         SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
@@ -474,7 +526,34 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_HEALING);
         AddClericDomain(nDeity, DOMAIN_LAW);
         AddClericDomain(nDeity, DOMAIN_PROTECTION);
+		
+    // Brandobaris (lesser god)
+    nDeity = AddDeity("Brandobaris");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+        SetDeityAvatar(nDeity, "Brandobaris_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Brandobaris_Symbol");
+        SetDeityPortfolio(nDeity, "stealth, adventuring, halfling rogues");
+        SetDeitySpawnLoc(nDeity, "Brandobaris_Start");
+		SetDeityTitle(nDeity, "halfling god");
+        SetDeityTitleAlternates(nDeity, "The Irresponsible Scamp, master of stealth");
+        SetDeityWeapon(nDeity, WEAPON_DAGGER);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL,  ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL,  ALIGNMENT_NEUTRAL);
+		AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+		AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_HALFLING);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_LUCK);
+        AddClericDomain(nDeity, DOMAIN_TRAVEL);
+        AddClericDomain(nDeity, DOMAIN_TRICKERY);
+		
     // Callarduran Smoothhands (intermediate god)
     nDeity = AddDeity("Callarduran Smoothhands");
         SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
@@ -665,7 +744,31 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
         AddClericDomain(nDeity, DOMAIN_WATER);
 
+    // Deep Duerra (demigoddess)
+    nDeity = AddDeity("Deep Duerra");
+        SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_EVIL);
+        SetDeityAvatar(nDeity, "Duerra_Avatar");
+        SetDeityGender(nDeity, GENDER_FEMALE);
+        SetDeityHolySymbol(nDeity, "Duerra_Symbol");
+        SetDeityPortfolio(nDeity, "psionics, conquest, expansion");
+        SetDeitySpawnLoc(nDeity, "Duerra_Start");
+        SetDeityTitle(nDeity, "dwarven god");
+        SetDeityTitleAlternates(nDeity, "Queen of the Invisible Art, Axe Princess of Conquest");
+        SetDeityWeapon(nDeity, WEAPON_BATTLEAXE);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_DWARF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_EVIL);
+        AddClericDomain(nDeity, DOMAIN_LAW);
+        AddClericDomain(nDeity, DOMAIN_WAR);
+		
     // Deneir (lesser god)
     nDeity = AddDeity("Deep Deneir");
         SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
@@ -691,6 +794,31 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
         AddClericDomain(nDeity, DOMAIN_PROTECTION);
 
+    // Dugmaren Brightmantle (lesser god)
+    nDeity = AddDeity("Dugmaren Brightmantle");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Dugmaren_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Dugmaren_Symbol");
+        SetDeityPortfolio(nDeity, "discovery, invention, scholarship");
+        SetDeitySpawnLoc(nDeity, "Dugmaren_Start");
+        SetDeityTitle(nDeity, "dawarven god");
+        SetDeityTitleAlternates(nDeity, "The Errant Explorer, The Gleam in the Eye, and The Wandering Tinker");
+        SetDeityWeapon(nDeity, WEAPON_SHORTSWORD);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_DWARF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
+        AddClericDomain(nDeity, DOMAIN_CHAOS);
+		
     // Dumathoin (intermediate god)
     nDeity = AddDeity("Dumathoin");
         SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
@@ -770,7 +898,34 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_LUCK);
         AddClericDomain(nDeity, DOMAIN_TRICKERY);
 
+    // Fenmarel Mestarine (lesser god)
+    nDeity = AddDeity("Fenmarel Mestarine");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        SetDeityAvatar(nDeity, "Fenmarel_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Fenmarel_Symbol");
+        SetDeityPortfolio(nDeity, "druids, elves, outcasts, scapegoats, isolation");
+        SetDeitySpawnLoc(nDeity, "Fenmarel_Start");
+        SetDeityTitle(nDeity, "elven god");
+        SetDeityTitleAlternates(nDeity, "The Lone Wolf");
+        SetDeityWeapon(nDeity, WEAPON_DAGGER);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC,  ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_EVIL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_ELF);
+        AddClericRace(nDeity, RACIAL_TYPE_HALFELFELVEN);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_CHAOS);
+        AddClericDomain(nDeity, DOMAIN_ANIMAL);
+        AddClericDomain(nDeity, DOMAIN_TRAVEL);
+        AddClericDomain(nDeity, DOMAIN_PLANT);
+        AddClericDomain(nDeity, DOMAIN_TRICKERY);
+		
     // Finder Wyvernspur (demnigod)
     nDeity = AddDeity("Finder Wyvernspur");
         SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
@@ -822,7 +977,31 @@ void InitializePantheon()
         // Doubling up Good allows Good + any domain.
         AddClericDomain(nDeity, DOMAIN_GOOD);
 
+    // Gaerdal Ironhand (lesser god)
+    nDeity = AddDeity("Gaerdal Ironhand");
+        SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Gaerdal_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Gaerdal_Symbol");
+        SetDeityPortfolio(nDeity, "vigilance, combat, and martial defence");
+        SetDeitySpawnLoc(nDeity, "Gaerdal_Start");
+        SetDeityTitle(nDeity, "gnomish god");
+        SetDeityTitleAlternates(nDeity, "The Stern, Sheild of the Golden Hills");
+        SetDeityWeapon(nDeity, WEAPON_WARHAMMER);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_GNOME);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_LAW);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
+        AddClericDomain(nDeity, DOMAIN_WAR);
 
     // Garagos (demigod)
     nDeity = AddDeity("Garagos");
@@ -899,7 +1078,31 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_PROTECTION);
         AddClericDomain(nDeity, DOMAIN_TRICKERY);
 
+	
+    // Geb (lesser deity)
+    nDeity = AddDeity("Geb");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+        SetDeityAvatar(nDeity, "Geb_Avatar");
+        SetDeityHolySymbol(nDeity, "Geb_Symbol");
+        SetDeityPortfolio(nDeity, "the earth, miners, mines, and mineral resources");
+        SetDeitySpawnLoc(nDeity, "Geb_Start");
+        SetDeityTitleAlternates(nDeity, "King of the Riches Under the Earth, Father Under the Skies and Sands, and Lord Earth");
+        SetDeityWeapon(nDeity, WEAPON_QUARTERSTAFF);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+		
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_EARTH);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
+		 
     // Gond (intermediate god)
     nDeity = AddDeity("Gond");
         SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
@@ -929,7 +1132,33 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_FIRE);
         AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
 
+    // Gorm Gulthyn (lesser god)
+    nDeity = AddDeity("Gorm Gulthyn");
+        SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Gorm_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Gorm_Symbol");
+        SetDeityPortfolio(nDeity, "guardian of all dwarves, defense, watchfulness");
+        SetDeitySpawnLoc(nDeity, "Gorm_Start");
+        SetDeityTitle(nDeity, "dwarf god");
+        SetDeityTitleAlternates(nDeity, "Fire Eyes, Lord of the Bronze Mask, and the Eternally Vigilant");
+        SetDeityWeapon(nDeity, WEAPON_BATTLEAXE);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL,  ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_DWARF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_LAW);
+        AddClericDomain(nDeity, DOMAIN_WAR);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
+		
     // Grumbar (greater god)
     nDeity = AddDeity("Grumbar");
         SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
@@ -1037,7 +1266,55 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_MAGIC);
         AddClericDomain(nDeity, DOMAIN_PROTECTION);
 
+    // Haaela Brightaxe (demigoddess)
+    nDeity = AddDeity("Haela Brightaxe");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Haela_Avatar");
+        SetDeityGender(nDeity, GENDER_FEMALE);
+        SetDeityHolySymbol(nDeity, "Haela_Symbol");
+        SetDeityPortfolio(nDeity, "luck in battle, joy of battle, dwarven warriors");
+        SetDeitySpawnLoc(nDeity, "Haela_Start");
+        SetDeityTitle(nDeity, "dwarven goddess");
+        SetDeityTitleAlternates(nDeity, "Lady of the Fray, and Luckmaiden");
+        SetDeityWeapon(nDeity, WEAPON_GREATSWORD);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_DWARF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_CHAOS);
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_LCUK);
+        AddClericDomain(nDeity, DOMAIN_WAR);
+
+	// Hathor (lesser deity)
+    nDeity = AddDeity("Hathor");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Hathor_Avatar");
+        SetDeityHolySymbol(nDeity, "Hathor_Symbol");
+        SetDeityPortfolio(nDeity, "motherhood, folk music, dance, the moon, and fate");
+        SetDeitySpawnLoc(nDeity, "Hathor_Start");
+        SetDeityTitleAlternates(nDeity, "The Nurturing Mother, THe Quiet One, The Dancer of FOrtune, and She Who is There for Those in Need");
+        SetDeityWeapon(nDeity, WEAPON_SHORTSWORD);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_HEALING);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
+	
     // Helm (intermediate god)
     nDeity = AddDeity("Helm");
         SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
@@ -1092,6 +1369,28 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_TRAVEL);
         AddClericDomain(nDeity, DOMAIN_DESTRUCTION);
 
+			
+    // Horus-Re (greater deity)
+    nDeity = AddDeity("Horus-Re");
+        SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Horus_Avatar");
+        SetDeityHolySymbol(nDeity, "Horus_Symbol");
+        SetDeityPortfolio(nDeity, "the sun, vengeance, rulership, kings, and life");
+        SetDeitySpawnLoc(nDeity, "Horus_Start");
+        SetDeityTitleAlternates(nDeity, "Lord of the Sun, Master of Vengeance, Rule of Mulhorand, and Pharaoh of the Gods");
+        SetDeityWeapon(nDeity, WEAPON_SICKLE);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_SUN);
 
     // Ilmater (intermediate god)
     nDeity = AddDeity("Ilmater");
@@ -1146,6 +1445,30 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_EVIL);
         AddClericDomain(nDeity, DOMAIN_WAR);
 
+				
+    // Isis (intermediate deity)
+    nDeity = AddDeity("Isis");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Isis_Avatar");
+        SetDeityHolySymbol(nDeity, "Isis_Symbol");
+        SetDeityPortfolio(nDeity, "weather, rivers, agriculture, love, marriage, and good magic");
+        SetDeitySpawnLoc(nDeity, "Isis_Start");
+        SetDeityTitleAlternates(nDeity, "Bountiful Lady, Lady of All Love, Mistress of Weather, Lady of Rivers, and Mistress of Enchantment");
+        SetDeityWeapon(nDeity, WEAPON_UNARMED);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_AIR);
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_MAGIC);
+        AddClericDomain(nDeity, DOMAIN_WATER);
 
     // Istishia (greater god)
     nDeity = AddDeity("Istishia");
@@ -1439,6 +1762,30 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_GOOD);
         AddClericDomain(nDeity, DOMAIN_HEALING);
 
+    // Luthic (demigod)
+    nDeity = AddDeity("Luthic");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        SetDeityAvatar(nDeity, "Luthic_Avatar");
+        SetDeityGender(nDeity, GENDER_FEMALE);
+        SetDeityHolySymbol(nDeity, "Luthic_Symbol");
+        SetDeityPortfolio(nDeity, "caves, fertility, healing, home, orc females, servitude, wisdom");
+        SetDeitySpawnLoc(nDeity, "Luthic_Start");
+        SetDeityTitle(nDeity, "orc deity");
+        SetDeityTitleAlternates(nDeity, "Cave Mother, and Blood Moon Witch");
+        SetDeityWeapon(nDeity, WEAPON_DAGGER);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL,  ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allow all races.
+        //AddClericRace(nDeity, RACIAL_TYPE_);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_EVIL);
+        AddClericDomain(nDeity, DOMAIN_EARTH);
+        AddClericDomain(nDeity, DOMAIN_HEALING);
 
     // Malar (demigod)
     nDeity = AddDeity("Malar");
@@ -1465,6 +1812,30 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_EVIL);
         AddClericDomain(nDeity, DOMAIN_STRENGTH);
 
+    // Marthammor Duin (exarch)
+    nDeity = AddDeity("Marthammor Duin");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Marthammor_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Marthammor_Symbol");
+        SetDeityPortfolio(nDeity, "expatriates, guides, lightning, and travelers");
+        SetDeitySpawnLoc(nDeity, "Marthammor_Start");
+        SetDeityTitle(nDeity, "dwarven god");
+        SetDeityTitleAlternates(nDeity, "Finder of Trails, Watcher Over Wanderers, and The Watchful Eye");
+        SetDeityWeapon(nDeity, WEAPON_HEAVYMACE);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL,  ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+
+        // Allow all races.
+        //AddClericRace(nDeity, RACIAL_TYPE_DWARF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_TRAVEL);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
 
     // Mask (demigod)
     nDeity = AddDeity("Mask");
@@ -1598,6 +1969,28 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
         AddClericDomain(nDeity, DOMAIN_MAGIC);
 
+		
+     // Nephthys (intermediate deity)
+    nDeity = AddDeity("Nephthys");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Nephthys_Avatar");
+        SetDeityHolySymbol(nDeity, "Nephthys_Symbol");
+        SetDeityPortfolio(nDeity, "wealth, trade, and protector of children and the dead");
+        SetDeitySpawnLoc(nDeity, "Nephthys_Start");
+        SetDeityTitleAlternates(nDeity, "Guardian of Wealth and Commerce, Protector of the Dead, The Devoted Lady, The Lady of Sands, and The Avenging Mother");
+        SetDeityWeapon(nDeity, WEAPON_WHIP);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
 
     // Nobanion (demigod)
     nDeity = AddDeity("Nobanion");
@@ -1650,6 +2043,29 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_TRAVEL);
         AddClericDomain(nDeity, DOMAIN_TRICKERY);
 
+		
+    // Osiris (intermediate deity)
+    nDeity = AddDeity("Osiris");
+        SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Osiris_Avatar");
+        SetDeityHolySymbol(nDeity, "Osiris_Symbol");
+        SetDeityPortfolio(nDeity, "vegetation, death, the dead, justice, and harvest");
+        SetDeitySpawnLoc(nDeity, "Osiris_Start");
+        SetDeityTitleAlternates(nDeity, "Lord of Nature, Judge of the Dead, The White Crown, and Reaper of the Harvest");
+        SetDeityWeapon(nDeity, WEAPON_HEAVYFLAIL);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_PLAN);
+        AddClericDomain(nDeity, DOMAIN_DEATH);
 
     // Red Knight (demigoddess)
     nDeity = AddDeity("Red Knight");
@@ -1733,6 +2149,29 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
         AddClericDomain(nDeity, DOMAIN_MAGIC);
 
+		
+    // Sebek (demigod)
+    nDeity = AddDeity("Sebek");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        SetDeityAvatar(nDeity, "Sebek_Avatar");
+        SetDeityHolySymbol(nDeity, "Sebek_Symbol");
+        SetDeityPortfolio(nDeity, "crocodiles, rivers, river hazards, werecrocodiles, and wetlands");
+        SetDeitySpawnLoc(nDeity, "Sebek_Start");
+        SetDeityTitleAlternates(nDeity, "Lord of Crocodiles, and THe Smiling Death");
+        SetDeityWeapon(nDeity, WEAPON_UNARMED);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_ANIMAL);
+        AddClericDomain(nDeity, DOMAIN_WATER);
+        AddClericDomain(nDeity, DOMAIN_EVIL);
 
     // Segojan Earthcaller (intermediate god)
     nDeity = AddDeity("Segojan Earthcaller");
@@ -1813,6 +2252,29 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_PROTECTION);
         AddClericDomain(nDeity, DOMAIN_TRAVEL);
 
+		
+    // Set (intermediate deity)
+    nDeity = AddDeity("Set");
+        SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_EVIL);
+        SetDeityAvatar(nDeity, "Set_Avatar");
+        SetDeityHolySymbol(nDeity, "Set_Symbol");
+        SetDeityPortfolio(nDeity, "the desert, destruction, drought, night, rot, snakes, hate, betrayal, evil magic, ambition, poison, and murder");
+        SetDeitySpawnLoc(nDeity, "Set_Start");
+        SetDeityTitleAlternates(nDeity, "Lord of Evil, Defiler of the Dead, Lord of Carrion, Father of Jackals, Brother of Serpents, Outcast of the Gods, King of Malice, God of Darkness, and God of Desert Storms");
+        SetDeityWeapon(nDeity, WEAPON_SPEAR);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_EVIL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_AIR);
+        AddClericDomain(nDeity, DOMAIN_MAGIC);
+        AddClericDomain(nDeity, DOMAIN_EVIL);
 
     // Shar (greater goddess)
     nDeity = AddDeity("Shar");
@@ -1891,6 +2353,30 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_EVIL);
         AddClericDomain(nDeity, DOMAIN_TRICKERY);
 
+    // Sharindlar (intermediate goddess)
+    nDeity = AddDeity("Sharindlar");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Sharindlar_Avatar");
+        SetDeityGender(nDeity, GENDER_FEMALE);
+        SetDeityHolySymbol(nDeity, "Sharindlar_Symbol");
+        SetDeityPortfolio(nDeity, "courtship, dancing, fertility, healing, mercy, the moon, and romantic love");
+        SetDeitySpawnLoc(nDeity, "Sharindlar_Start");
+        SetDeityTitle(nDeity, "dwarven god");
+        SetDeityTitleAlternates(nDeity, "Lady of Life and Mercy, and The Shining Dancer");
+        SetDeityWeapon(nDeity, WEAPON_WHIP);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC,  ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_DWARF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_CHAOS);
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_HEALING);
 
 
     // Shaundakal (lesser god)
@@ -1945,6 +2431,31 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_AIR);
         AddClericDomain(nDeity, DOMAIN_PLANT);
 
+    // Shevarash (demigod)
+    nDeity = AddDeity("Shevarash");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        SetDeityAvatar(nDeity, "Shevarash_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Shevarash_Symbol");
+        SetDeityPortfolio(nDeity, "crusades, hatred of the drow, loss, and vengeance");
+        SetDeitySpawnLoc(nDeity, "Shevarash_Start");
+        SetDeityTitle(nDeity, "elven goddess");
+        SetDeityTitleAlternates(nDeity, "The Black Archer, The Night Hunter, and Arrow Bringer");
+        SetDeityWeapon(nDeity, WEAPON_BOW);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_ELF);
+        AddClericRace(nDeity, RACIAL_TYPE_HALFELFELF);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_CHAOS);
+        AddClericDomain(nDeity, DOMAIN_DESTRUCTION);
+        AddClericDomain(nDeity, DOMAIN_WAR);
 
     // Shiallia (demigoddess)
     nDeity = AddDeity("Shiallia");
@@ -2182,7 +2693,56 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_EVIL);
         AddClericDomain(nDeity, DOMAIN_DESTRUCTION);
 
+    // Thard Harr (lesser god)
+    nDeity = AddDeity("Thard Harr");
+        SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        SetDeityAvatar(nDeity, "Thard_Avatar");
+        SetDeityGender(nDeity, GENDER_MALE);
+        SetDeityHolySymbol(nDeity, "Thard_Symbol");
+        SetDeityPortfolio(nDeity, "wild dwarves, jungle survival, hunting");
+        SetDeitySpawnLoc(nDeity, "Thard_Start");
+        SetDeityTitle(nDeity, "dwarven god");
+        SetDeityTitleAlternates(nDeity, "Lord of the Jungle Deeps");
+        SetDeityWeapon(nDeity, WEAPON_UNARMED);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+
+        // Allow all races.
+        //AddClericRace(nDeity, RACIAL_TYPE_DWARF);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_ANIMAL);
+        AddClericDomain(nDeity, DOMAIN_CHAOS);
+        AddClericDomain(nDeity, DOMAIN_GOOD);
+        AddClericDomain(nDeity, DOMAIN_PLANT);
+		
+    // Thoth (intermediate deity)
+    nDeity = AddDeity("Thoth");
+        SetDeityAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+        SetDeityAvatar(nDeity, "Thoth_Avatar");
+        SetDeityHolySymbol(nDeity, "Thoth_Symbol");
+        SetDeityPortfolio(nDeity, "neutral magic, scribes, knowledge, invention, secrets");
+        SetDeitySpawnLoc(nDeity, "Thoth_Start");
+        SetDeityTitleAlternates(nDeity, "Lord of Magic, Scribe of the Gods, Knower of All Secrets, Keeper of Knowledge, and King of Knowledge");
+        SetDeityWeapon(nDeity, WEAPON_QUARTERSTAFF);
+
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_EVIL);
+        AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+		
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_);
+		
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);
+        AddClericDomain(nDeity, DOMAIN_MAGIC);
+				
     // Torm (lesser deity)
     nDeity = AddDeity("Torm");
         SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
@@ -2373,7 +2933,31 @@ void InitializePantheon()
         AddClericDomain(nDeity, DOMAIN_EARTH);
         AddClericDomain(nDeity, DOMAIN_EVIL);
 
+    // Urogalan (demigod)
+    nDeity = AddDeity("Urogalan");
+        SetDeityAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+        SetDeityAvatar(nDeity, "Urogalan_Avatar");
+        SetDeityHolySymbol(nDeity, "Urogalan_Symbol");
+        SetDeityPortfolio(nDeity, "earth, death, protection of the dead");
+        SetDeitySpawnLoc(nDeity, "Urogalan_Start");
+        SetDeityTitle(nDeity, "halfling deity");
+        SetDeityTitleAlternates(nDeity, "He Who Must Be, The Black Hound, Lord in the Earth, The Protector, and The Shaper");
+        SetDeityWeapon(nDeity, WEAPON_HEAVYFLAIL);
 
+        // Allowed alignments.
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
+        AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_EVIL);
+
+        // Allowed races.
+        AddClericRace(nDeity, RACIAL_TYPE_HALFLING);
+
+        // Domain choices.
+        AddClericDomain(nDeity, DOMAIN_DEATH);
+        AddClericDomain(nDeity, DOMAIN_EARTH);
+        AddClericDomain(nDeity, DOMAIN_LAW);
+        AddClericDomain(nDeity, DOMAIN_PROTECTION);
+		
     // Uthgar (intermediate deity)
     nDeity = AddDeity("Uthgar");
         SetDeityAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);

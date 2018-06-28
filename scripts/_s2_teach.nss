@@ -12,6 +12,7 @@
 
 #include "_inc_color"
 #include "zdlg_include_i"
+#include "_dlg_teach"
 
 void main()
 {
