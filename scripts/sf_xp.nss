@@ -271,8 +271,8 @@ void GiveXP(object oKiller, int nXPToGive, float fKillerBonus, int nDiff, int nP
                         FloatingTextStringOnCreature("Party level difference is too great", oParty);
                         nXPToGive = MIN_XP;
                     }
-                    nXPToGive = nXPToGive + FloatToInt(fKillerBonus);
-                    nXPToGive = XPPoolGetXPAward(oParty, nXPToGive);
+                    //nXPToGive = nXPToGive + FloatToInt(fKillerBonus);
+                    //nXPToGive = XPPoolGetXPAward(oParty, nXPToGive);
 
                     if (FLOATING_TEXT)
                     {
@@ -295,7 +295,7 @@ void GiveXP(object oKiller, int nXPToGive, float fKillerBonus, int nDiff, int nP
                 // Reward other party members
                 else
                 {
-                        nXPToGive = XPPoolGetXPAward(oParty, nXPToGive);
+                        //nXPToGive = XPPoolGetXPAward(oParty, nXPToGive);
                     if (FLOATING_TEXT)
                     {
                         DelayCommand(0.1, FloatingTextStringOnCreature(IntToString(nXPToGive)+"XP", oParty, FALSE));

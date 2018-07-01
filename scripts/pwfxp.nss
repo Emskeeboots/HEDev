@@ -190,7 +190,7 @@
 //
 // you can further scale the leveling progress more precisely with the PWFXP_LEVEL_MODIFIERS constant
 // just continue to read my comments...
-const float PWFXP_GLOBAL_MODIFIER = 10.0;
+const float PWFXP_GLOBAL_MODIFIER = 2.2;
 
 // displays one-line XP status info after each kill
 // useful while you fine tune the system.
@@ -295,10 +295,10 @@ const string PWFXP_ECL_MODIFIERS = "1-AASIMAR|1-TIEFLING|1-AIR GENASI|1-FIRE GEN
 // the first number modifies level 1, the last number level 40
 //
 //                            LEVEL-----01--|--02--|--03--|--04--|--05--|--06--|--07--|--08--|--09--|--10--|--11--|--12--|--13--|--14--|--15--|--16--|--17--|--18--|--19--|--20--|--21--|--22--|--23--|--24--|--25--|--26--|--27--|--28--|--29--|--30--|--31--|--32--|--33--|--34--|--35--|--36--|--37--|--38--|--39--|--40--|
-const string PWFXP_LEVEL_MODIFIERS = "01.000|01.000|01.000|01.000|01.000|01.000|01.000|01.000|01.000|01.000|00.850|00.850|00.800|00.800|00.750|00.750|00.700|00.700|00.650|00.650|00.600|00.550|00.500|00.450|00.400|00.350|00.300|00.200|00.100|00.090|00.090|00.080|00.080|00.070|00.070|00.060|00.060|00.050|00.040|00.040";
+const string PWFXP_LEVEL_MODIFIERS = "01.000|01.000|01.000|01.000|00.850|00.850|00.800|00.800|00.750|00.750|00.700|00.700|00.650|00.650|00.500|00.500|00.500|00.500|00.500|00.500|00.850|00.850|00.800|00.800|00.750|00.750|00.700|00.700|00.650|00.650|00.600|00.550|00.500|00.450|00.400|00.350|00.300|00.200|00.100|00.090|00.090|00.080|00.080|00.070|00.070|00.060|00.060|00.050|00.040|00.040";
 
 // small bonus for killing blow dealer
-const float PWFXP_KILLINGBLOW_MODIFIER = 0.1; // 10%
+const float PWFXP_KILLINGBLOW_MODIFIER = 0.0; // 10%
 
 // PC level gets compared to the average party level.
 // APL = Average Party Level
@@ -396,14 +396,14 @@ const float PWFXP_SCALAR = 1.0;
 
 // maximum CR cap
 // this stops creatures with sky-high CRs from giving godly XP
-const float PWFXP_CR_MAX = 60.0;
+const float PWFXP_CR_MAX = 40.0;
 
 // groups get a small xp bonus
 // formular is groupsize-1 * modifier
 // with a default value of 0.1 (10%) a party of 4 receives 30% XP bonus
 // this should encourage grouping
 // set it to 0.0 if you dont like that...
-const float PWFXP_GROUPBONUS_MODIFIER = 0.5;
+const float PWFXP_GROUPBONUS_MODIFIER = 0.1;
 
 // groub members need to be within this distance to the dead creature
 // if they want to get any XP during fights
@@ -415,7 +415,7 @@ const int PWFXP_MINIMUM_XP = 1;
 
 // safety mechanism
 // maximum XP for a kill
-const int PWFXP_MAXIMUM_XP = 100;
+const int PWFXP_MAXIMUM_XP = 40;
 
 // UPDATED:
 // these constants determine how XP division works

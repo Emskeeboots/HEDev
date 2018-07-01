@@ -285,7 +285,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_STRENGTH);
@@ -917,7 +917,7 @@ void InitializePantheon()
 
         // Allowed races.
         AddClericRace(nDeity, RACIAL_TYPE_ELF);
-        AddClericRace(nDeity, RACIAL_TYPE_HALFELFELVEN);
+        AddClericRace(nDeity, RACIAL_TYPE_HALFELF);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_CHAOS);
@@ -1097,7 +1097,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_NEUTRAL, ALIGNMENT_NEUTRAL);
 		
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_EARTH);
@@ -1289,7 +1289,7 @@ void InitializePantheon()
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_CHAOS);
         AddClericDomain(nDeity, DOMAIN_GOOD);
-        AddClericDomain(nDeity, DOMAIN_LCUK);
+        AddClericDomain(nDeity, DOMAIN_LUCK);
         AddClericDomain(nDeity, DOMAIN_WAR);
 
 	// Hathor (lesser deity)
@@ -1308,7 +1308,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_GOOD);
@@ -1386,7 +1386,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_GOOD);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_GOOD);
@@ -1462,7 +1462,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_AIR);
@@ -1986,7 +1986,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_GOOD);
@@ -2060,11 +2060,11 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_GOOD);
-        AddClericDomain(nDeity, DOMAIN_PLAN);
+        AddClericDomain(nDeity, DOMAIN_PLANT);
         AddClericDomain(nDeity, DOMAIN_DEATH);
 
     // Red Knight (demigoddess)
@@ -2166,7 +2166,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_NEUTRAL);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_ANIMAL);
@@ -2269,7 +2269,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_EVIL);
 
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_AIR);
@@ -2441,7 +2441,7 @@ void InitializePantheon()
         SetDeitySpawnLoc(nDeity, "Shevarash_Start");
         SetDeityTitle(nDeity, "elven goddess");
         SetDeityTitleAlternates(nDeity, "The Black Archer, The Night Hunter, and Arrow Bringer");
-        SetDeityWeapon(nDeity, WEAPON_BOW);
+        SetDeityWeapon(nDeity, WEAPON_LONGBOW);
 
         // Allowed alignments.
         AddClericAlignment(nDeity, ALIGNMENT_CHAOTIC, ALIGNMENT_GOOD);
@@ -2450,7 +2450,7 @@ void InitializePantheon()
 
         // Allowed races.
         AddClericRace(nDeity, RACIAL_TYPE_ELF);
-        AddClericRace(nDeity, RACIAL_TYPE_HALFELFELF);
+        AddClericRace(nDeity, RACIAL_TYPE_HALFELF);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_CHAOS);
@@ -2737,7 +2737,7 @@ void InitializePantheon()
         AddClericAlignment(nDeity, ALIGNMENT_LAWFUL, ALIGNMENT_NEUTRAL);
 		
         // Allowed races.
-        AddClericRace(nDeity, RACIAL_TYPE_);
+        //AddClericRace(nDeity, RACIAL_TYPE_);
 		
         // Domain choices.
         AddClericDomain(nDeity, DOMAIN_KNOWLEDGE);

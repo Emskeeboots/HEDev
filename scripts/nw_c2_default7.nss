@@ -131,16 +131,16 @@ void main()
     // TODO - this is not working
     //if(GetLocalInt(OBJECT_SELF,"LOOT"))
     //   LootGenerate(oKiller);
-  
+
     // Tell NESS we are dead - this removes the delay of waiting for the PHB to run
     ExecuteScript("spawn_do_death", OBJECT_SELF);
-    
+
     // henesua - special XP system
     // XPRewardCombat(oKiller, OBJECT_SELF);
     // Use this to use knat's pw XP system.
-    // ExecuteScript("pwfxp", OBJECT_SELF);
+     ExecuteScript("pwfxp", OBJECT_SELF);
     // Use this to use Scarface XP system.
-    ExecuteScript("sf_xp", OBJECT_SELF);
+    //ExecuteScript("sf_xp", OBJECT_SELF);
 
     // Custom code
 
