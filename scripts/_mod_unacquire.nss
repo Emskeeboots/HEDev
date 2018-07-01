@@ -166,13 +166,6 @@ void doPlaceableItem(object oItem, object oLoser)
   }
 }
 
-
-
-
-
-
-
-
 void main()
 {
     object oItem        = GetModuleItemLost();
@@ -181,7 +174,6 @@ void main()
         // item destroyed
         return;
     }
-
 
     object oLoser       = GetModuleItemLostBy();
 
@@ -192,13 +184,13 @@ void main()
     //SendMessageToPC(GetFirstPC(), RED+"Unacquire: Loser("+GetName(oLoser)+") Item("+GetName(oItem)+")");
      // Set this here so all other called scripts can use it.
      SetUserDefinedItemEventNumber(X2_ITEM_EVENT_UNACQUIRE);
-
+     
      // PW bookkeeping - this is not a bug - same script handles both acquire and unacquire.
      ExecuteScript("pw_mod_aqu", OBJECT_SELF);
-
+     
      // CPP unacquire fixes - meaglyn: this is not currently in he.
      //ExecuteScript("70_mod_unaqu", OBJECT_SELF);
-
+        
     if(GetLocalInt(oItem, "OOC_ITEM")&&!IsOOC(oLoser))
         DestroyObject(oItem);
     // is this a corpse?

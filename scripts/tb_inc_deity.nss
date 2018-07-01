@@ -130,13 +130,13 @@ void GiveHolySymbol(object oPC) {
 }
 
 object  deityGetCorpseItem(object oPC) {
-    object oItem = GetFirstItemInInventory(oPC);
-    while (GetIsObjectValid(oItem)) {
-        if (GetResRef(oItem) == "corpse_pc") return oItem;
+	object oItem = GetFirstItemInInventory(oPC);
+	while (GetIsObjectValid(oItem)) {
+		if (GetResRef(oItem) == "corpse_pc") return oItem;
 
-        oItem = GetNextItemInInventory(oPC);
-    }
-    return OBJECT_INVALID;
+		oItem = GetNextItemInInventory(oPC);
+	}
+	return OBJECT_INVALID;
 }
 ///////////////////////////////////////////////////////////////////////////////
 // RewardFaithfulness()
