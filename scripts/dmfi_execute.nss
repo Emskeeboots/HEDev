@@ -190,6 +190,7 @@ void DoDiceBagFunction(int iDice, object oUser, int iDMOverride = 0)
     int iRight = StringToInt(GetStringRight(IntToString(iDice), 1));
     switch (iDice)
     {
+
     case 61: iNum = 1; iSide = 20; sAbility="Strength Check, "; iMod = GetAbilityModifier(ABILITY_STRENGTH, oUser); break;
     case 62: iNum = 1; iSide = 20; sAbility="Dexterity Check, "; iMod = GetAbilityModifier(ABILITY_DEXTERITY, oUser); break;
     case 63: iNum = 1; iSide = 20; sAbility="Constitution Check, "; iMod = GetAbilityModifier(ABILITY_CONSTITUTION, oUser); break;
@@ -200,28 +201,28 @@ void DoDiceBagFunction(int iDice, object oUser, int iDMOverride = 0)
     case 68: iNum = 1; iSide = 20; sAbility="Reflex Save, "; iMod = GetReflexSavingThrow(oUser); break;
     case 69: iNum = 1; iSide = 20; sAbility="Will Save, "; iMod = GetWillSavingThrow(oUser); break;
 
-    case 71: iNum = 1; iSide = 20; iTrain = 1; sAbility="Animal Empathy Check, "; iMod = GetSkillRank(SKILL_ANIMAL_EMPATHY, oUser); break;
-    case 72: iNum = 1; iSide = 20; sAbility="Bargain Check, "; iMod = GetSkillRank(SKILL_APPRAISE, oUser); break;
-    case 73: iNum = 1; iSide = 20; sAbility="Bluff Check, "; iMod = GetSkillRank(SKILL_BLUFF, oUser); break;
-    //case 74: iNum = 1; iSide = 20; sAbility="Climb Check, "; iMod = GetSkillRank(SKILL_CLIMB, oUser); break;
+    case 70: iNum = 1; iSide = 20; iTrain = 1; sAbility="Animal Empathy Check, "; iMod = GetSkillRank(SKILL_ANIMAL_EMPATHY, oUser); break;
+    case 71: iNum = 1; iSide = 20; sAbility="Bargain Check, "; iMod = GetSkillRank(SKILL_APPRAISE, oUser); break;
+    case 72: iNum = 1; iSide = 20; sAbility="Bluff Check, "; iMod = GetSkillRank(SKILL_BLUFF, oUser); break;
+    case 73: iNum = 1; iSide = 20; sAbility="Climb Check, "; iMod = GetSkillRank(SKILL_CLIMB, oUser); break;
     case 74: iNum = 1; iSide = 20; sAbility="Concentration Check, "; iMod = GetSkillRank(SKILL_CONCENTRATION, oUser); break;
     case 75: iNum = 1; iSide = 20; sAbility="Crafting Check, "; iMod = GetSkillRank(SKILL_CRAFTING, oUser); break;
     case 76: iNum = 1; iSide = 20; iTrain = 1; sAbility="Decipher Script Check, "; iMod = GetSkillRank(SKILL_DECIPHER_SCRIPT, oUser); break;
     case 77: iNum = 1; iSide = 20; iTrain = 1; sAbility="Disable Trap Check, "; iMod = GetSkillRank(SKILL_DISABLE_TRAP, oUser); break;
     case 78: iNum = 1; iSide = 20; sAbility="Discipline Check, "; iMod = GetSkillRank(SKILL_DISCIPLINE, oUser); break;
-    //case 79: iNum = 1; iSide = 20; sAbility="Escape Artist Check, "; iMod = GetSkillRank(SKILL_ESCAPE_ARTIST, oUser); break;
-    case 79: iNum = 1; iSide = 20; iTrain = 1; sAbility="Forgery Check, "; iMod = GetSkillRank(SKILL_FORGERY, oUser); break;
+    case 79: iNum = 1; iSide = 20; sAbility="Escape Artist Check, "; iMod = GetSkillRank(SKILL_ESCAPE_ARTIST, oUser); break;
+    case 80: iNum = 1; iSide = 20; iTrain = 1; sAbility="Forgery Check, "; iMod = GetSkillRank(SKILL_FORGERY, oUser); break;
 
     case 81: iNum = 1; iSide = 20; iTrain = 1; sAbility="Heal Check, "; iMod = GetSkillRank(SKILL_HEAL, oUser); break;
     case 82: iNum = 1; iSide = 20; sAbility="Hide Check, "; iMod = GetSkillRank(SKILL_HIDE, oUser); break;
     case 83: iNum = 1; iSide = 20; sAbility="Intimidate Check, "; iMod = GetSkillRank(SKILL_INTIMIDATE, oUser); break;
-    //case 86: iNum = 1; iSide = 20; sAbility="Jump Check, "; iMod = GetSkillRank(SKILL_JUMP, oUser); break;
-    case 84: iNum = 1; iSide = 20; sAbility="Listen Check, "; iMod = GetSkillRank(SKILL_LISTEN, oUser); break;
-    case 85: iNum = 1; iSide = 20; iTrain = 1; sAbility="Lore Check, "; iMod = GetSkillRank(SKILL_LORE, oUser); break;
-    case 86: iNum = 1; iSide = 20; sAbility="Move Silently Check, "; iMod = GetSkillRank(SKILL_MOVE_SILENTLY, oUser); break;
-    case 87: iNum = 1; iSide = 20; iTrain = 1; sAbility="Open Lock Check, "; iMod = GetSkillRank(SKILL_OPEN_LOCK, oUser); break;
-    case 88: iNum = 1; iSide = 20; sAbility="Perform Check, "; iMod = GetSkillRank(SKILL_PERFORM, oUser); break;
-    case 89: iNum = 1; iSide = 20; sAbility="Persuade Check, "; iMod = GetSkillRank(SKILL_PERSUADE, oUser); break;
+    case 84: iNum = 1; iSide = 20; sAbility="Jump Check, "; iMod = GetSkillRank(SKILL_JUMP, oUser); break;
+    case 85: iNum = 1; iSide = 20; sAbility="Listen Check, "; iMod = GetSkillRank(SKILL_LISTEN, oUser); break;
+    case 86: iNum = 1; iSide = 20; iTrain = 1; sAbility="Lore Check, "; iMod = GetSkillRank(SKILL_LORE, oUser); break;
+    case 87: iNum = 1; iSide = 20; sAbility="Move Silently Check, "; iMod = GetSkillRank(SKILL_MOVE_SILENTLY, oUser); break;
+    case 88: iNum = 1; iSide = 20; iTrain = 1; sAbility="Open Lock Check, "; iMod = GetSkillRank(SKILL_OPEN_LOCK, oUser); break;
+    case 89: iNum = 1; iSide = 20; sAbility="Perform Check, "; iMod = GetSkillRank(SKILL_PERFORM, oUser); break;
+    case 90: iNum = 1; iSide = 20; sAbility="Persuade Check, "; iMod = GetSkillRank(SKILL_PERSUADE, oUser); break;
 
     case 91: iNum = 1; iSide = 20; iTrain = 1; sAbility="Pick Pocket Check, "; iMod = GetSkillRank(SKILL_PICK_POCKET, oUser); break;
     case 92: iNum = 1; iSide = 20; sAbility="Search Check, "; iMod = GetSkillRank(SKILL_SEARCH, oUser); break;
@@ -229,10 +230,10 @@ void DoDiceBagFunction(int iDice, object oUser, int iDMOverride = 0)
     case 94: iNum = 1; iSide = 20; sAbility="Sense Motive Check, "; iMod = GetSkillRank(SKILL_SENSE_MOTIVE, oUser); break;
     case 95: iNum = 1; iSide = 20; iTrain = 1; sAbility="Spellcraft Check, "; iMod = GetSkillRank(SKILL_SPELLCRAFT, oUser); break;
     case 96: iNum = 1; iSide = 20; sAbility="Spot Check, "; iMod = GetSkillRank(SKILL_SPOT, oUser); break;
-    //case 96: iNum = 1; iSide = 20; sAbility="Swim Check, "; iMod = GetSkillRank(SKILL_SWIM, oUser); break;
-    case 97: iNum = 1; iSide = 20; sAbility="Taunt Check, "; iMod = GetSkillRank(SKILL_TAUNT, oUser); break;
-    case 98: iNum = 1; iSide = 20; iTrain = 1; sAbility="Tumble Check, "; iMod = GetSkillRank(SKILL_TUMBLE, oUser); break;
-    case 99: iNum = 1; iSide = 20; iTrain = 1; sAbility="Use Magic Device Check, "; iMod = GetSkillRank(SKILL_USE_MAGIC_DEVICE, oUser); break;
+    case 97: iNum = 1; iSide = 20; sAbility="Swim Check, "; iMod = GetSkillRank(SKILL_SWIM, oUser); break;
+    case 98: iNum = 1; iSide = 20; sAbility="Taunt Check, "; iMod = GetSkillRank(SKILL_TAUNT, oUser); break;
+    case 99: iNum = 1; iSide = 20; iTrain = 1; sAbility="Tumble Check, "; iMod = GetSkillRank(SKILL_TUMBLE, oUser); break;
+    case 100: iNum = 1; iSide = 20; iTrain = 1; sAbility="Use Magic Device Check, "; iMod = GetSkillRank(SKILL_USE_MAGIC_DEVICE, oUser); break;
 
     case 101: SetLocalInt(oUser, "dmfi_dicebag", 2); SetDMFIPersistentInt("dmfi", "dmfi_dicebag", 2, oUser); SetCustomToken(20681, "Local"); FloatingTextStringOnCreature("Broadcast Mode set to Local", oUser, FALSE); return; break;
     case 102: SetLocalInt(oUser, "dmfi_dicebag", 1); SetDMFIPersistentInt("dmfi", "dmfi_dicebag", 1, oUser); SetCustomToken(20681, "Global"); FloatingTextStringOnCreature("Broadcast Mode set to Global", oUser, FALSE); return; break;
@@ -2004,31 +2005,31 @@ void DoXPFunction(int iXP, object oUser)
     switch (iXP)
     {
     case 8: DMFI_NextTarget(oTarget, oUser); return; break;
-    case 11: sFloating =  "Roleplaying Bonus"; iPercent = 1; nXPType=XP_TYPE_ROLEPLAY; break;
-    case 12: sFloating =  "Roleplaying Bonus"; iPercent = 2; nXPType=XP_TYPE_ROLEPLAY; break;
-    case 13: sFloating =  "Roleplaying Bonus"; iPercent = 3; nXPType=XP_TYPE_ROLEPLAY; break;
-    case 14: sFloating =  "Roleplaying Bonus"; iPercent = 4; nXPType=XP_TYPE_ROLEPLAY; break;
-    case 15: sFloating =  "Roleplaying Bonus"; iPercent = 5; nXPType=XP_TYPE_ROLEPLAY; break;
-    case 21: sFloating =  "Main Plot Bonus"; iPercent = 10; nXPType=XP_TYPE_QUEST; break;
-    case 22: sFloating =  "Main Plot Bonus"; iPercent = 20; nXPType=XP_TYPE_QUEST; break;
-    case 23: sFloating =  "Main Plot Bonus"; iPercent = 25; nXPType=XP_TYPE_QUEST; break;
-    case 24: sFloating =  "Main Plot Bonus"; iPercent = 33; nXPType=XP_TYPE_QUEST; break;
-    case 25: sFloating =  "Main Plot Bonus"; iPercent = 50; nXPType=XP_TYPE_QUEST; break;
-    case 31: sFloating =  "Main Plot Bonus"; iPercent = 10; iParty = 1; nXPType=XP_TYPE_QUEST; break;
-    case 32: sFloating =  "Main Plot Bonus"; iPercent = 20; iParty = 1; nXPType=XP_TYPE_QUEST; break;
-    case 33: sFloating =  "Main Plot Bonus"; iPercent = 25; iParty = 1; nXPType=XP_TYPE_QUEST; break;
-    case 34: sFloating =  "Main Plot Bonus"; iPercent = 33; iParty = 1; nXPType=XP_TYPE_QUEST; break;
-    case 35: sFloating =  "Main Plot Bonus"; iPercent = 50; iParty = 1; nXPType=XP_TYPE_QUEST; break;
-    case 41: sFloating =  "Best In Game Bonus"; iPercent = 2; break;
-    case 42: sFloating =  "Best In Game Bonus"; iPercent = 5; break;
-    case 43: sFloating =  "Best In Game Bonus"; iPercent = 10; break;
-    case 44: sFloating =  "Best In Game Bonus"; iPercent = 20; break;
-    case 45: sFloating =  "Best In Game Bonus"; iPercent = 25; break;
-    case 51: iParty = 1; iReward = 100; break;
-    case 52: iParty = 1; iReward = 250; break;
-    case 53: iParty = 1; iReward = 500; break;
-    case 54: iParty = 1; iReward = 1000; break;
-    case 55: iParty = 1; iReward = 2000; break;
+    case 11: sFloating =  "Roleplaying Bonus"; iReward = 10; nXPType=XP_TYPE_ROLEPLAY; break;
+    case 12: sFloating =  "Roleplaying Bonus"; iReward = 25; nXPType=XP_TYPE_ROLEPLAY; break;
+    case 13: sFloating =  "Roleplaying Bonus"; iReward = 50; nXPType=XP_TYPE_ROLEPLAY; break;
+    case 14: sFloating =  "Roleplaying Bonus"; iReward = 100; nXPType=XP_TYPE_ROLEPLAY; break;
+    case 15: sFloating =  "Roleplaying Bonus"; iReward = 250; nXPType=XP_TYPE_ROLEPLAY; break;
+    case 21: sFloating =  "Main Plot Bonus"; iReward = 50; nXPType=XP_TYPE_QUEST; break;
+    case 22: sFloating =  "Main Plot Bonus"; iReward = 100; nXPType=XP_TYPE_QUEST; break;
+    case 23: sFloating =  "Main Plot Bonus"; iReward = 200; nXPType=XP_TYPE_QUEST; break;
+    case 24: sFloating =  "Main Plot Bonus"; iReward = 300; nXPType=XP_TYPE_QUEST; break;
+    case 25: sFloating =  "Main Plot Bonus"; iReward = 500; nXPType=XP_TYPE_QUEST; break;
+    case 31: sFloating =  "Main Plot Bonus"; iReward = 1000; iParty = 1; nXPType=XP_TYPE_QUEST; break;
+    case 32: sFloating =  "Main Plot Bonus"; iReward = 2000; iParty = 1; nXPType=XP_TYPE_QUEST; break;
+    case 33: sFloating =  "Main Plot Bonus"; iReward = 2500; iParty = 1; nXPType=XP_TYPE_QUEST; break;
+    case 34: sFloating =  "Main Plot Bonus"; iReward = 3500; iParty = 1; nXPType=XP_TYPE_QUEST; break;
+    case 35: sFloating =  "Main Plot Bonus"; iReward = 5000; iParty = 1; nXPType=XP_TYPE_QUEST; break;
+    case 41: sFloating =  "Best In Game Bonus"; iReward = 10; break;
+    case 42: sFloating =  "Best In Game Bonus"; iReward = 25; break;
+    case 43: sFloating =  "Best In Game Bonus"; iReward = 50; break;
+    case 44: sFloating =  "Best In Game Bonus"; iReward = 100; break;
+    case 45: sFloating =  "Best In Game Bonus"; iReward = 250; break;
+    case 51: iParty = 1; iReward = 25; break;
+    case 52: iParty = 1; iReward = 50; break;
+    case 53: iParty = 1; iReward = 100; break;
+    case 54: iParty = 1; iReward = 250; break;
+    case 55: iParty = 1; iReward = 500; break;
     case 61:   iHD = GetHitDice(oTarget);
         SendMessageToPC(oUser, GetName(oTarget) +" has received " + IntToString(GetLocalInt(oPartyMember, "dmfi_XPGiven")) + " DMFI WAND XP this session.");
         SendMessageToPC(oUser, GetName(oTarget) +" currently has " + IntToString(GetXP(oTarget)) + " total XP.");

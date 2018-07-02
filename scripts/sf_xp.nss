@@ -185,7 +185,7 @@ void main()
 
     // Calculate XP
     int nBaseXP = CalculateXP(fAvLevel, fCR);
-    int nXP = ((nBaseXP * XP_MODIFIER) / 15);
+    int nXP = ((nBaseXP * XP_MODIFIER) / 35);
 
     // Lets make sure the XP reward is within consts parameters
     int nMaxXP = GetMaxXP(oKiller);

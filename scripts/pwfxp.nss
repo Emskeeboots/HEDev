@@ -190,7 +190,7 @@
 //
 // you can further scale the leveling progress more precisely with the PWFXP_LEVEL_MODIFIERS constant
 // just continue to read my comments...
-const float PWFXP_GLOBAL_MODIFIER = 2.2;
+const float PWFXP_GLOBAL_MODIFIER = 1.4;
 
 // displays one-line XP status info after each kill
 // useful while you fine tune the system.
@@ -295,7 +295,7 @@ const string PWFXP_ECL_MODIFIERS = "1-AASIMAR|1-TIEFLING|1-AIR GENASI|1-FIRE GEN
 // the first number modifies level 1, the last number level 40
 //
 //                            LEVEL-----01--|--02--|--03--|--04--|--05--|--06--|--07--|--08--|--09--|--10--|--11--|--12--|--13--|--14--|--15--|--16--|--17--|--18--|--19--|--20--|--21--|--22--|--23--|--24--|--25--|--26--|--27--|--28--|--29--|--30--|--31--|--32--|--33--|--34--|--35--|--36--|--37--|--38--|--39--|--40--|
-const string PWFXP_LEVEL_MODIFIERS = "01.000|01.000|01.000|01.000|00.850|00.850|00.800|00.800|00.750|00.750|00.700|00.700|00.650|00.650|00.500|00.500|00.500|00.500|00.500|00.500|00.850|00.850|00.800|00.800|00.750|00.750|00.700|00.700|00.650|00.650|00.600|00.550|00.500|00.450|00.400|00.350|00.300|00.200|00.100|00.090|00.090|00.080|00.080|00.070|00.070|00.060|00.060|00.050|00.040|00.040";
+const string PWFXP_LEVEL_MODIFIERS = "01.000|01.000|01.000|00.850|00.600|00.500|00.500|00.500|00.500|00.500|00.500|00.000|00.000|00.000|00.000|00.500|00.500|00.500|00.500|00.500|00.850|00.850|00.800|00.800|00.750|00.750|00.700|00.700|00.650|00.650|00.600|00.550|00.500|00.450|00.400|00.350|00.300|00.200|00.100|00.090|00.090|00.080|00.080|00.070|00.070|00.060|00.060|00.050|00.040|00.040";
 
 // small bonus for killing blow dealer
 const float PWFXP_KILLINGBLOW_MODIFIER = 0.0; // 10%
@@ -337,7 +337,7 @@ const float PWFXP_KILLINGBLOW_MODIFIER = 0.0; // 10%
 //
 // Distance PC B = abs(PClevel - AveragePartyLevel) = abs(3 - 3.66) = 0.66
 // PC-A has a final distance of -1.34 (0.66 - APL_REDUCTION)
-// no XP reduction
+// no XP reduction (SCALAR (0,5) / (APL_NOXP (2) - APL_REDUCTION) (0,25)) * -1.34 = (0.5 / 2) * -1.34 = 33.5% XP reduction
 //
 // Distance PC C = abs(PClevel - AveragePartyLevel) = abs(1 - 3.66) = 2.66
 // PC-A has a final distanceof 0.66 (2.66 - APL_REDUCTION)
@@ -348,9 +348,43 @@ const float PWFXP_KILLINGBLOW_MODIFIER = 0.0; // 10%
 //
 // set _REDUCTION to 40 and _NOXP to 41 if you don't want any APL reduction
 //
+
+//Example 1
+//const float PWFXP_APL_REDUCTION = 2.0; // levels
+//const float PWFXP_APL_NOXP = 4.0;
+//const float PWFXP_SCALAR = 0.5;
+
+// PC A = level 7 = 33,5 %
+// PC B = level 3 = 0%
+// PC C = level 1 = 16,5
+
+
+//Example 2
+//const float PWFXP_APL_REDUCTION = 3.0; // levels
+//const float PWFXP_APL_NOXP = 6.0;
+//const float PWFXP_SCALAR = 1.0;
+
+// PC A = level 7 = 11%
+// PC B = level 3 = None
+// PC C = level 1 = None
+
+//Example 2
+//const float PWFXP_APL_REDUCTION = 1.0; // levels
+//const float PWFXP_APL_NOXP = 6.0;
+//const float PWFXP_SCALAR = 0.5;
+
+// PC A = level 7 =
+// PC B = level 3 =
+// PC C = level 1 =
+
+
 // changed default to a bit less harsh values
-const float PWFXP_APL_REDUCTION = 3.0; // levels
-const float PWFXP_APL_NOXP = 6.0;
+const float PWFXP_APL_REDUCTION = 1.0; // levels
+const float PWFXP_APL_NOXP = 3.0;
+
+
+//const float PWFXP_APL_REDUCTION = 40.0; // levels
+//const float PWFXP_APL_NOXP = 41.0;
 
 // NEW:
 // these 4 constants works like the APL constants above but it compares
@@ -368,7 +402,8 @@ const float PWFXP_APL_NOXP = 6.0;
 // set _REDUCTION to CR_MAX and _NOXP to CR_MAX+1 if you don't want any cr reduction
 //
 // reduction constants for PCs fighting mobs with a CR below their level
-const float PWFXP_CR_LESSTHAN_PCLEVEL_REDUCTION = 3.0;
+
+const float PWFXP_CR_LESSTHAN_PCLEVEL_REDUCTION = 2.0;
 const float PWFXP_CR_LESSTHAN_PCLEVEL_NOXP = 10.0;
 
 // note: default setting only penalize PCs if they try to kill something
@@ -388,11 +423,14 @@ const float PWFXP_CR_LESSTHAN_PCLEVEL_NOXP = 10.0;
 // set _REDUCTION to CR_MAX and _NOXP to CR_MAX+1 if you don't want any cr reduction
 //
 // reduction constants for PCs fighting mobs with a CR above their level
+//const float PWFXP_CR_GREATERTHAN_PCLEVEL_REDUCTION = CR_MAX;
+//const float PWFXP_CR_GREATERTHAN_PCLEVEL_NOXP = CR_MAX+1;
+
 const float PWFXP_CR_GREATERTHAN_PCLEVEL_REDUCTION = 20.0;
 const float PWFXP_CR_GREATERTHAN_PCLEVEL_NOXP = 30.0;
 
 // described above
-const float PWFXP_SCALAR = 1.0;
+const float PWFXP_SCALAR = 0.5;
 
 // maximum CR cap
 // this stops creatures with sky-high CRs from giving godly XP
@@ -403,7 +441,7 @@ const float PWFXP_CR_MAX = 40.0;
 // with a default value of 0.1 (10%) a party of 4 receives 30% XP bonus
 // this should encourage grouping
 // set it to 0.0 if you dont like that...
-const float PWFXP_GROUPBONUS_MODIFIER = 0.1;
+const float PWFXP_GROUPBONUS_MODIFIER = 0.0;
 
 // groub members need to be within this distance to the dead creature
 // if they want to get any XP during fights
@@ -411,7 +449,7 @@ const float PWFXP_MAXIMUM_DISTANCE_TO_GROUP = 30.0; // meters
 
 // safety mechanism
 // minimum XP for a kill
-const int PWFXP_MINIMUM_XP = 1;
+const int PWFXP_MINIMUM_XP = 0;
 
 // safety mechanism
 // maximum XP for a kill
@@ -429,9 +467,9 @@ const int PWFXP_MAXIMUM_XP = 40;
 const float PWFXP_XP_DIVISOR_PC  = 1.0;
 const float PWFXP_XP_DIVISOR_DOMINATED = 0.5;
 const float PWFXP_XP_DIVISOR_HENCHMAN = 0.5;
-const float PWFXP_XP_DIVISOR_SUMMONED = 0.3;
-const float PWFXP_XP_DIVISOR_ANIMALCOMPANION = 0.2;
-const float PWFXP_XP_DIVISOR_FAMILIAR = 0.2;
+const float PWFXP_XP_DIVISOR_SUMMONED = 0.5;
+const float PWFXP_XP_DIVISOR_ANIMALCOMPANION = 0.3;
+const float PWFXP_XP_DIVISOR_FAMILIAR = 0.3;
 // used in case i can't determine the associate type
 const float PWFXP_XP_DIVISOR_UNKNOWN = 0.5;
 
@@ -608,6 +646,9 @@ void main()
   object oDead = OBJECT_SELF;
   object oKiller = GetLastKiller();
 
+
+
+
   // only continue if killer is valid and not from same faction...
   if ((oKiller==OBJECT_INVALID) || (GetFactionEqual(oKiller, oDead))) return;
 
@@ -626,10 +667,12 @@ void main()
       {
         nGroupSize++;
         // add pc divisor
-        fDivisor += PWFXP_XP_DIVISOR_PC;
+        //fDivisor += PWFXP_XP_DIVISOR_PC;
+        fDivisor = 1.0;
         fAvgLevel += IntToFloat(PWFXP_GetLevel(oGroupMbr));
       }
       else
+        //fDivisor = 1.0;
         fDivisor += PWFXP_GetAssociateDivisor(oGroupMbr); // add npc divisor
     }
     oGroupMbr = GetNextFactionMember(oKiller, FALSE);
@@ -700,8 +743,38 @@ void main()
       else if(nXP > PWFXP_MAXIMUM_XP)
         nXP = PWFXP_MAXIMUM_XP;
 
+//if (GetHitDice(oKiller) > 6)
+//   return;
+//      {
       if(nXP > 0) PWFXP_GiveXP(oGroupMbr, nXP);
+
+      if (GetLocalInt(oDead, "boss_death")== 1)
+       {
+      // RewardPartyXP(50, oKiller, TRUE);
+
+       PWFXP_GiveXP(oGroupMbr, nXP);
+
+       FloatingTextStringOnCreature("You have defeated a boss, and have been rewarded extra." , oKiller);
+       }
+//       }
+
+
     }
     oGroupMbr = GetNextFactionMember(oKiller, TRUE);
   }
+
+
+
+
+
+
+
 }
+
+
+
+
+
+
+
+

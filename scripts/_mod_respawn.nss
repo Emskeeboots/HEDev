@@ -30,7 +30,7 @@ void CreatePrettyCorpse(object oRespawner, location lDeath)
 void SendToFugue(object oRespawner)
 {
     // strip all items---------------
-    AssignCommand(oRespawner, StripInventory(oRespawner));
+    //AssignCommand(oRespawner, StripInventory(oRespawner));
     // ------------------------------
 
     // remove all effects ----------
@@ -40,7 +40,7 @@ void SendToFugue(object oRespawner)
         RemoveEffect(oRespawner, eLoop);
         eLoop=GetNextEffect(oRespawner);
     }
-    // restore personal VFX --------- 
+    // restore personal VFX ---------
     DeleteLocalInt(oRespawner, "vfx_do_op");
     ExecuteScript("_vfx_do_op", oRespawner);
     // ------------------------------
@@ -93,7 +93,7 @@ void main()
 
     string pcid         = GetPCID(oRespawner);
     // make the PC's inventory persistent (we strip their body of all items when they go to fugue)
-    CreatePersistentInventory("INV_CORPSE_"+pcid, oRespawner, pcid);
+    //CreatePersistentInventory("INV_CORPSE_"+pcid, oRespawner, pcid);
 
     Data_SetLocation("RESPAWN", GetLocation(oRespawner), oRespawner, pcid);
 

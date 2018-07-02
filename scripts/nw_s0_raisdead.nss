@@ -13,8 +13,13 @@
 
 #include "70_inc_spells"
 #include "x2_inc_spellhook"
+#include "nw_i0_plot"
+#include "00_debug"
 
+#include "_inc_color"
 #include "_inc_corpse"
+#include "_inc_data"
+
 
 void main()
 {
@@ -49,4 +54,10 @@ void main()
         if (nStrRef != -1)
             FloatingTextStrRefOnCreature(nStrRef,spell.Caster);
     }
+
 }
+
+
+
+
+

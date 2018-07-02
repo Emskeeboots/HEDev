@@ -25,6 +25,7 @@
 #include "_inc_death"
 //#include "_inc_xp"
 #include "_inc_loot"
+//#include "nw_i0_tool"
 
 void main()
 {
@@ -139,10 +140,17 @@ void main()
     // XPRewardCombat(oKiller, OBJECT_SELF);
     // Use this to use knat's pw XP system.
      ExecuteScript("pwfxp", OBJECT_SELF);
-    // Use this to use Scarface XP system.
+    //Use this to use Scarface XP system.
     //ExecuteScript("sf_xp", OBJECT_SELF);
 
     // Custom code
+
+//    object oPC = GetLastKiller();
+
+//    if (!GetIsPC(oPC)) return;
+
+
+
 
     // TODO - this should just be a hook to run whataver script is in CUSTOM_DEATH variable
     // 0tting (28-02-2018): Custom code in a horrible location until I figure out how this
@@ -166,6 +174,9 @@ void main()
         }
     }
 }
+
+
+
 
 
 

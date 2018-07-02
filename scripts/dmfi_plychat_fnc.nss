@@ -951,10 +951,12 @@ void ParseEmote(string sEmote, object oPC)
         SetLocalInt(oPC, "dmfi_univ_int", 69);
 
     else if ((FindSubString(sLCEmote, " animal empathy ") != -1))
-        SetLocalInt(oPC, "dmfi_univ_int", 71);
+        SetLocalInt(oPC, "dmfi_univ_int", 70);
     else if ((FindSubString(sLCEmote, " bargain") != -1))
-        SetLocalInt(oPC, "dmfi_univ_int", 72);
+        SetLocalInt(oPC, "dmfi_univ_int", 71);
     else if ((FindSubString(sLCEmote, " bluff") != -1))
+        SetLocalInt(oPC, "dmfi_univ_int", 72);
+    else if ((FindSubString(sLCEmote, " climb") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 73);
     else if ((FindSubString(sLCEmote, " concentration ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 74);
@@ -962,12 +964,17 @@ void ParseEmote(string sEmote, object oPC)
         SetLocalInt(oPC, "dmfi_univ_int", 75);
     else if ((FindSubString(sLCEmote, " decipher") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 76);
-    else if ((FindSubString(sLCEmote, "disable trap") != -1))
+    else if ((FindSubString(sLCEmote, " disable trap") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 77);
     else if ((FindSubString(sLCEmote, " discipline ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 78);
-    else if ((FindSubString(sLCEmote, " forgery ") != -1))
+    else if ((FindSubString(sLCEmote, " escape artist ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 79);
+    else if ((FindSubString(sLCEmote, " forgery ") != -1))
+        SetLocalInt(oPC, "dmfi_univ_int", 80);
+
+
+
 
     else if ((FindSubString(sLCEmote, " heal") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 81);
@@ -975,17 +982,19 @@ void ParseEmote(string sEmote, object oPC)
         SetLocalInt(oPC, "dmfi_univ_int", 82);
     else if ((FindSubString(sLCEmote, "intimidate") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 83);
-    else if ((FindSubString(sLCEmote, " listen") != -1))
+    else if ((FindSubString(sLCEmote, " jump") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 84);
-    else if ((FindSubString(sLCEmote, " lore ") != -1))
+    else if ((FindSubString(sLCEmote, " listen") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 85);
-    else if ((FindSubString(sLCEmote, " move silently ") != -1))
+    else if ((FindSubString(sLCEmote, " lore ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 86);
-    else if ((FindSubString(sLCEmote, " open lock ") != -1))
+    else if ((FindSubString(sLCEmote, " move silently ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 87);
+    else if ((FindSubString(sLCEmote, " open lock ") != -1))
+        SetLocalInt(oPC, "dmfi_univ_int", 88);
     else if ((FindSubString(sLCEmote, " perform") != -1))
     {
-        SetLocalInt(oPC, "dmfi_univ_int", 88);
+        SetLocalInt(oPC, "dmfi_univ_int", 89);
         if(FindSubString(GetTag(oLeftHand),"instrument")!=-1)
         {
             SetLocalObject(oPC, "DMFI_USE_INSTRUMENT", oLeftHand);
@@ -993,7 +1002,7 @@ void ParseEmote(string sEmote, object oPC)
         }
     }
     else if ((FindSubString(sLCEmote, " persuade") != -1))
-        SetLocalInt(oPC, "dmfi_univ_int", 89);
+        SetLocalInt(oPC, "dmfi_univ_int", 90);
 
     else if ((FindSubString(sLCEmote, " pick pocket ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 91);
@@ -1007,17 +1016,19 @@ void ParseEmote(string sEmote, object oPC)
         SetLocalInt(oPC, "dmfi_univ_int", 95);
     else if ((FindSubString(sLCEmote, " spot check ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 96);
+    else if ((FindSubString(sLCEmote, " swim ") != -1))
+        SetLocalInt(oPC, "dmfi_univ_int", 97);
     else if ((FindSubString(sLCEmote, " taunt") != -1))
     {
-        SetLocalInt(oPC, "dmfi_univ_int", 97);
+        SetLocalInt(oPC, "dmfi_univ_int", 98);
 
         PlayVoiceChat(VOICE_CHAT_TAUNT, oPC);
         AssignCommand(oPC, PlayAnimation(ANIMATION_FIREFORGET_TAUNT, 1.0));
     }
     else if ((FindSubString(sLCEmote, " tumble") != -1))
-        SetLocalInt(oPC, "dmfi_univ_int", 98);
-    else if ((FindSubString(sLCEmote, " use magic device ") != -1))
         SetLocalInt(oPC, "dmfi_univ_int", 99);
+    else if ((FindSubString(sLCEmote, " use magic device ") != -1))
+        SetLocalInt(oPC, "dmfi_univ_int", 100);
 
     if (GetLocalInt(oPC, "dmfi_univ_int"))
     {
@@ -1401,8 +1412,8 @@ void ParseCommand(object oTarget, object oCommander, string sComIn)
 
         if (Appear!=-1)
         {
-            // SetCreatureAppearanceType(GetLocalObject(oCommander, "dmfi_univ_target"), Appear);
-            SetCreatureAppearanceType(oTarget, Appear);
+            SetCreatureAppearanceType(GetLocalObject(oCommander, "dmfi_univ_target"), Appear);
+            //SetCreatureAppearanceType(oTarget, Appear);
         }
         else
         {

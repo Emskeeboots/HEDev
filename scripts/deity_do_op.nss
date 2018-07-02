@@ -11,7 +11,7 @@
 // 5 = do PC pray - called by the feat impl code
 // 6 = set PC favor to give deity_tmp_val and clear all pray variables - used for debugging.
 // 7 = give PC a holy symbol if she does not already have one.
-// 8 = check if PC has a valid deity and can follow or serve that deity. 
+// 8 = check if PC has a valid deity and can follow or serve that deity.
 
 #include "x2_inc_switches"
 #include "tb_inc_deity"
@@ -31,13 +31,13 @@ object findNearbyAltar(object oPC) {
         return OBJECT_INVALID;
 }
 
-
+/*
 void main() {
         object oPC = OBJECT_SELF;
         int nOp = GetLocalInt(oPC, "deity_tmp_op");
         DeleteLocalInt(oPC, "deity_tmp_op");
         SetExecutedScriptReturnValue(FALSE);
-        
+
         //SendMessageToPC(oPC, "deity_do_op : " + IntToString(nOp));
         if (nOp == 1) {
 
@@ -93,11 +93,11 @@ void main() {
                 int nDeity = GetDeityIndex(oPC);
                 // if in combat do combat prayer
 
-		if (nDeity < 0) {
-			SendMessageToPC(oPC, "You have no deity to which to pray!");
-			return;
+        if (nDeity < 0) {
+            SendMessageToPC(oPC, "You have no deity to which to pray!");
+            return;
 
-		}
+        }
                 if (GetIsInCombat(oPC)) {
                         deityMiracleCheck(oPC);
                 } else {
@@ -131,7 +131,7 @@ void main() {
 
         if (nOp == 7) {
                 GiveHolySymbol(oPC);
-                // if this runs set the return value to true. 
+                // if this runs set the return value to true.
                 SetExecutedScriptReturnValue(TRUE);
                 return;
         }
@@ -146,12 +146,12 @@ void main() {
 
                 // Check if valid selection
                 if (GetLevelByClass(CLASS_TYPE_CLERIC, oPC) > 0) {
-                        if (!DeityCheckCanServe(oPC, nDeity)) { 
+                        if (!DeityCheckCanServe(oPC, nDeity)) {
                                SetExecutedScriptReturnValue(FALSE);
                                return;
                         }
                 } else {
-                        if (!DeityCheckCanFollow(oPC, nDeity)) { 
+                        if (!DeityCheckCanFollow(oPC, nDeity)) {
                                 SetExecutedScriptReturnValue(FALSE);
                                return;
                         }
@@ -162,3 +162,4 @@ void main() {
         }
 
 }
+*/

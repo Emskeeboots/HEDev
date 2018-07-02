@@ -221,7 +221,7 @@ void main()
             SetLocalString(oLoser, "DESCRIPTION_"+ObjectToString(oItem), GetDescription(oItem));
         }
 
-        SetIdentified(oItem, FALSE); // item unidentified for others
+        //SetIdentified(oItem, FALSE); // item unidentified for others
 
         if( nBaseItem==BASE_ITEM_HERBS ||
             nBaseItem==BASE_ITEM_KEY

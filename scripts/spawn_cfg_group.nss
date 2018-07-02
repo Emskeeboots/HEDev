@@ -601,6 +601,45 @@ void NESSInitializeGroups()
     NESSAddCreatureToGroup("tt_ghost002", "sorrghost", 6);
     NESSAddCreatureToGroup("tt_ghost003", "sorrghost", 6);
 
+//Testgobs
+    NESSAddCreatureToGroup("testgoblin1", "testgob", 1);
+    NESSAddCreatureToGroup("testgoblin2", "testgob", 1);
+    NESSAddCreatureToGroup("testgoblin3", "testgob", 1);
+    NESSAddCreatureToGroup("testgoblin4", "testgob", 2);
+    NESSAddCreatureToGroup("testgoblin5", "testgob", 3);
+    NESSAddCreatureToGroup("testgoblin6", "testgob", 4);
+    NESSAddCreatureToGroup("testgoblin7", "testgob", 5);
+    NESSAddCreatureToGroup("testgoblin8", "testgob", 6);
+    NESSAddCreatureToGroup("testgoblin9", "testgob", 7);
+    NESSAddCreatureToGroup("testgoblin10", "testgob", 8);
+    NESSAddCreatureToGroup("testgoblin11", "testgob", 9);
+    NESSAddCreatureToGroup("testgoblin12", "testgob", 10);
+
+//Black Arrow
+
+    NESSAddCreatureToGroup("bo_blackarrow001", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrow004", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrow006", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrowhun", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrow002", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrow003", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrow005", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrow008", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrow009", "blackarrow", 1);
+    NESSAddCreatureToGroup("bo_blackarrowmem", "blackarrow", 1);
+
+//Black Arrow Hunters
+    NESSAddCreatureToGroup("bo_blackarrow001", "blackhunter", 1);
+    NESSAddCreatureToGroup("bo_blackarrow004", "blackhunter", 1);
+    NESSAddCreatureToGroup("bo_blackarrow006", "blackhunter", 1);
+    NESSAddCreatureToGroup("bo_blackarrowhun", "blackhunter", 1);
+
+
+
+
+
+
+
 
 
 

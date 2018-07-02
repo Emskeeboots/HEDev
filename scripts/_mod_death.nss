@@ -35,6 +35,7 @@ void DropCorpses(object oCreature)
                                 DISTANCE_SHORT,
                                 GetOppositeDirection(fDir),
                                 fDir);
+    /*
     while(GetIsObjectValid(oItem))
     {
         if(GetResRef(oItem)=="corpse_pc")
@@ -42,6 +43,7 @@ void DropCorpses(object oCreature)
 
         oItem       = GetNextItemInInventory(oCreature);
     }
+    */
 }
 
 
@@ -90,7 +92,7 @@ void main()
         deathDebug("_mod_death: " +GetName(oPC) + " is already dead - nothing to do.");
         return;
     }
-    SetLocalInt(oPC, "IS_DEAD", TRUE); // set the death event as called 
+    SetLocalInt(oPC, "IS_DEAD", TRUE); // set the death event as called
     DeleteLocalInt(oPC, "PC_STABILIZED"); // dead people are not considered stabilized.
 
     deathDebug("_mod_death: " +GetName(oPC) + " cur HP = " + IntToString(GetCurrentHitPoints(oPC)));
