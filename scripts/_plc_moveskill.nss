@@ -1252,23 +1252,23 @@ void MSAttemptMove(object oUser)
         // Make the nearby people aware of the result. In playtesting the players liked this feature.
         AssignCommand(oUser, DelayCommand(2.0, SpeakString("*SUCCESS* on "+sDifficulty+" "+sSkillName)) );
 
-/*     // reward xp for skill use?
+    // reward xp for skill use?
       int last    = GetLocalInt(oUser, "XP_MOVE_LAST");
       int now     = GetTimeCumulative();
       if(   MSGetSkillRank(Move.skill, oUser)<Move.DC         // ensure that there was some challenge or use of resources
-        &&  (!last||  (now-last)>(GetLocalInt(GetModule(), "IGMINUTES_PER_RLMINUTE")*7)) // only give XP every 7 RL minutes for move skill
+        &&  (!last||  (now-last)>(GetLocalInt(GetModule(), "IGMINUTES_PER_RLMINUTE")*5)) // only give XP every 7 RL minutes for move skill
         )
       {
         SetLocalInt(oUser, "XP_MOVE_LAST", now);
 
         // reward XP for skilluse
         string sRewardTag   = TAG_SKILL+"MOVE_"+GetLocalString(OBJECT_SELF,"MOVE_DESTINATION");
-        int nXPReward   = Move.DC*7;
+        int nXPReward   = 10;
 
         // XPRewardByType handles the declining reward based on count.
         DelayCommand(2.1, XPRewardByType( sRewardTag, oUser, nXPReward, XP_TYPE_ABILITY) );
       }
-      */
+
     }
     // --- FAILURE FEEDBACK ---
     else

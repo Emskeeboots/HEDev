@@ -242,21 +242,21 @@ void main() {
 
         int nHBTick         = GetLocalInt(oMod, "MOD_HEARTBEAT_TICK")+1;
         int nHBModulo       = GetLocalInt(oMod, "MOD_HB_TICK_MODULO");
-    // Check if we need to do the hourly or daily scripts 
-    
+    // Check if we need to do the hourly or daily scripts
+
         int nTimeStamp = CurrentTimeStamp();
         int nTime = TimeStampToHours(nTimeStamp);
         int nDay = TimeStampToDays(nTimeStamp);
         int bDoHourCheck = FALSE;
         int bDoDayCheck = FALSE;
         int nLastCheckHour = GetLocalInt(OBJECT_SELF, "LastCheckHour");
-        int nLastCheckDay =  GetLocalInt(OBJECT_SELF, "LastCheckDay");  
+        int nLastCheckDay =  GetLocalInt(OBJECT_SELF, "LastCheckDay");
         if (nTime > nLastCheckHour) {
                 dblvl(DEBUGLEVEL_HB, "ModHB, Doing Hour check : current time ", nTime, " Last check ", nLastCheckHour, TRUE);
                 SetLocalInt(OBJECT_SELF, "LastCheckHour", nTime);
                 bDoHourCheck = TRUE;
         }
-        
+
         if (nDay > nLastCheckDay) {
                 dblvl(DEBUGLEVEL_HB, "ModHB, Doing Day check : current Day ", nDay, " Last check ", nLastCheckDay, TRUE);
                 SetLocalInt(OBJECT_SELF, "LastCheckDay", nDay);
@@ -265,9 +265,9 @@ void main() {
 
     //if(nHBTick>10){nHBTick=1;}
         if(nHBTick>nHBModulo){nHBTick=1;}
-        SetLocalInt(oMod, "MOD_HEARTBEAT_TICK",nHBTick);  
+        SetLocalInt(oMod, "MOD_HEARTBEAT_TICK",nHBTick);
 
-        // This serves as a sort of timestamp. 
+        // This serves as a sort of timestamp.
         int nHBCount         = GetLocalInt(oMod, "MOD_HEARTBEAT_COUNT")+1;
         SetLocalInt(oMod, "MOD_HEARTBEAT_COUNT",nHBCount);
 
@@ -278,14 +278,14 @@ void main() {
         while(GetIsObjectValid(oPC)) {
                 // OOC exclusion - only living PCs in game are traversed
                 if(!GetLocalInt(oPC, "IS_DEAD") &&  !IsOOC(oPC) &&  !GetIsDM(oPC) ) {
-                        DelayCommand(0.0, do_pc_heartbeat(oPC, nHBTick)); 
+                        DelayCommand(0.0, do_pc_heartbeat(oPC, nHBTick));
 
                         // These are things we only do every hour
-                        //if (bDoHourCheck) {
-                        //        DelayCommand(0.0, ExecuteScript("tb_pc_hourly", oPC));
-                        //}
-                
-                        // These things are done once every day 
+                        if (bDoHourCheck) {
+                                DelayCommand(0.0, ExecuteScript("tb_pc_hourly", oPC));
+                        }
+
+                        // These things are done once every day
                         if (bDoDayCheck) {
                                 DelayCommand(0.0, ExecuteScript("tb_pc_daily", oPC));
                         }
@@ -301,16 +301,17 @@ void main() {
         if(nHBTick==1) {
                 object corpse_store = GetObjectByTag("corpse_storage");
 
-		// TODO - flag in here when modified?
+        // TODO - flag in here when modified?
                 if(GetIsObjectValid(corpse_store)) {
-			SetPersistentObject(GetModule(), "corpse_storage", corpse_store, "0");
-			//Data_SaveCampaignObject(corpse_store);
-		}
+            SetPersistentObject(GetModule(), "corpse_storage", corpse_store, "0");
+            //Data_SaveCampaignObject(corpse_store);
+        }
         }
 
         // once every MOD_HB_TICK_MODULO ticks we save the time
-        if(nHBTick==nHBModulo) { 
+        if(nHBTick==nHBModulo) {
                 NWNX_SaveGameTime(campaign_id);
-	}
+    }
 }
+
 

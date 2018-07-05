@@ -64,7 +64,7 @@ string deityGetHolySymbolTag(object oPC);
 
 // Return one of the DEITY_STANDING constants for how this PC is
 // in respect to the given nDeity index.
-int deityGetStanding(int nDeity, object oPC);
+int deityGetStanding(int nDeity, object oPC, int bDebug = FALSE);
 
 // get the amount the PC should pay for full healing.
 // Based on the DEFAULT_HEAL_BASE_COST, the PCs standing and level and
@@ -725,14 +725,16 @@ void deityRemCurse(object oPC, object oHealer = OBJECT_SELF) {
 
 // Return one of the DEITY_STANDING constants for how this PC is
 // in respect to the given nDeity index.
-int deityGetStanding(int nDeity, object oPC) {
+int deityGetStanding(int nDeity, object oPC, int bDebug = FALSE) {
 
     // If PC's deity is different return DEITY_STANDING_OTHER
     int nPCDeity = GetDeityIndex(oPC);
 
-    if (nDeity != nPCDeity)
-        return DEITY_STANDING_OTHER ;
-
+    if (nDeity != nPCDeity) {
+	    if (bDebug) WriteTimestampedLogEntry("DEITY DEBUG: " + GetName(oPC) + " GetStanding mismatch have "
+						 + IntToString(nPCDeity) + " need " + IntToString(nDeity));
+	    return DEITY_STANDING_OTHER ;
+    }
     // At this point we're talking about the same deity...
     // Figure if PC is cleric
     if (GetLevelByClass(CLASS_TYPE_CLERIC, oPC) > 0) {
@@ -910,11 +912,15 @@ void deityRestoreSavedData(object oPC) {
 void deitySetDeity(object oPC, string sDeity) {
 
         SetDeity(oPC, sDeity);
+	DeleteLocalInt(oPC, "deity_cached_idx");
+	DeleteLocalInt(oPC, "deity_cache_valid");
+	
         if (deityIsCleric(oPC))
                 SetPersistentInt(oPC,  "deity_favor_points", 65);
         else
                 SetPersistentInt(oPC,  "deity_favor_points", 50);
 
+	GetDeityIndex(oPC);
         deityRestoreSavedData(oPC);
 
         DeityRestrictionsPostLevel(oPC);

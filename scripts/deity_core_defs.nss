@@ -624,8 +624,20 @@ int GetDeityIndexFromName(string sName) {
 // Returns -1 if the deity does not have an index (i.e. is not valid).
 //
 int GetDeityIndex(object oPC) {
-    string sName = GetDeity(oPC);
-    return GetDeityIndexFromName(sName);
+
+	int nRet = GetLocalInt(oPC, "deity_cached_idx");
+	if (nRet > 0) return nRet;
+	if (nRet == 0 && GetLocalInt(oPC, "deity_cache_valid")) return 0;
+	
+	string sName = GetDeity(oPC);
+	nRet = GetDeityIndexFromName(sName);
+
+	if (nRet >= 0) {
+		SetLocalInt(oPC, "deity_cached_idx", nRet);
+		SetLocalInt(oPC, "deity_cache_valid", 1);
+		return nRet;
+	}
+	return -1;
 }
 
 

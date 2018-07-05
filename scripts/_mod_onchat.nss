@@ -25,7 +25,7 @@
 
 // rewritten dmfi_plychat_exe to work as include
 // much DMFI code and AID code pasted into Main of this script
-// Why?  it's better code as an exe... 
+// Why?  it's better code as an exe...
 #include "dmfi_plychat_fnc"
 
 // ACP (Alt Combat Phenotypes) Include
@@ -463,7 +463,7 @@ void DoHelp(string sText, object oPC)
     SendMessageToPC(oPC, YELLOW+"/item     "+PINK+"List of special items a character can create or destroy.");
     SendMessageToPC(oPC, YELLOW+"/lounge   "+PINK+"Enter or exit the OOC lounge.");
     SendMessageToPC(oPC, YELLOW+"/style    "+PINK+"List available combat styles and animations.");
-    SendMessageToPC(oPC, YELLOW+"/language "+PINK+"List available languages."); 
+    SendMessageToPC(oPC, YELLOW+"/language "+PINK+"List available languages.");
     SendMessageToPC(oPC, YELLOW+"/pray "+PINK+"Pray to your Deity.");
     //SendMessageToPC(oPC, YELLOW+"/addcdkey "+PINK+"Tell the server that you want to associate another CD Key with your player account. After you issue this command, you should immediately quit and then log back in with a different CD Key.");
     SendMessageToPC(oPC, " ");
@@ -658,7 +658,6 @@ void main()
 {
     object oPC      = GetPCChatSpeaker();
     if(!GetIsObjectValid(oPC)){return;}     // Catch exceptions
-
     int bDMPossessed= GetIsDMPossessed(oPC);
     int bDM         = GetIsDM(oPC);
     object oMaster  = GetMaster(oPC);
@@ -694,13 +693,13 @@ void main()
     int bLastCommand= FALSE;
     int bTranslate  = FALSE;
     string sTranslation;
-    
-    // DBG commands  "#dbg ..." 
+
+    // DBG commands  "#dbg ..."
     // See if the debug code wants it
     if (ExecuteScriptAndReturnInt("tb_dbg_pcchat", OBJECT_SELF)) {
         return;
     }
- 
+
     // See if the tailor code wants it
     if (ExecuteScriptAndReturnInt("tlr_pc_chat", OBJECT_SELF)) {
         return;
@@ -708,9 +707,9 @@ void main()
 
 
     //Madrabbits Chatcommands
-    // TODO - this should return if took care of the command. 
+    // TODO - this should return if took care of the command.
     // also. these use / too.  That will keep us from running extra code below.
-    // Or just run the commands in the hillsedge section below. 
+    // Or just run the commands in the hillsedge section below.
     //MRPlayerChat();
 
     // COMMAND CHARACTERS INCLUDE:
@@ -899,10 +898,10 @@ void main()
             DoLanguages(sLCChat, oTarget);
         else if (sLeft == "pray") {
                 SetLocalInt(oPC, "deity_tmp_op", 5);
-                ExecuteScript("deity_do_op", oPC); 
+                ExecuteScript("deity_do_op", oPC);
         }
         else if (sLeft == "hug") {
-		ExecuteScript("com_s_hug", oPC)  ;
+        ExecuteScript("com_s_hug", oPC)  ;
         } else if (sLeft == "dsc") {
                 ExecuteScript("com_s_dsc", oPC) ;
         } else if (sLeft == "tch") {
@@ -1126,8 +1125,14 @@ void main()
     if(sChat!="")
     {
         // timestamp player as having chat something (used in determining whether PC is roleplaying)
-        SetLocalInt(OBJECT_SELF, "LAST_CHAT_TIME",GetTimeCumulative());
+        SetLocalInt(OBJECT_SELF, "LAST_CHAT_TIME",GetTimeCumulative());  // Global, not used by player!
+        SetLocalInt(oPC, "LAST_CHAT_TIME_PC", GetTimeHour());        // Added by Andrei
+
+        // Track number of times PC enters something in the chat field.
+        // Used to determine RP XP reward. [File - ]
+        SetLocalInt(oPC, "CHAT_COUNT", GetLocalInt(oPC, "CHAT_COUNT")+1);   // Added by Andrei
     }
+    else { SetLocalInt(oPC, "IS_ROLEPLAYING", 0); } // So you can't get XP just by entering blanks.
 
     SetPCChatVolume(nVolume);
     if (bChangedText || bLastCommand)
@@ -1137,3 +1142,4 @@ void main()
     if (sKey != "<" && sKey != ">")
         SetLocalString(oTarget, "LAST_CHAT", sLastChat);
 }
+

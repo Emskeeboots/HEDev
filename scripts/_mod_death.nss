@@ -35,7 +35,7 @@ void DropCorpses(object oCreature)
                                 DISTANCE_SHORT,
                                 GetOppositeDirection(fDir),
                                 fDir);
-    /*
+
     while(GetIsObjectValid(oItem))
     {
         if(GetResRef(oItem)=="corpse_pc")
@@ -43,7 +43,6 @@ void DropCorpses(object oCreature)
 
         oItem       = GetNextItemInInventory(oCreature);
     }
-    */
 }
 
 

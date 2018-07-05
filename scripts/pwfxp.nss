@@ -173,6 +173,9 @@
   - made it easier to manage ECL modifiers. see PWFXP_ECL_MODIFIERS string constant
 
 */
+
+#include "_inc_xp"
+
 //:://////////////////////////////////////////////
 //:: Created By: LasCivious & Knat
 //:: Created On: 7/2003
@@ -190,7 +193,7 @@
 //
 // you can further scale the leveling progress more precisely with the PWFXP_LEVEL_MODIFIERS constant
 // just continue to read my comments...
-const float PWFXP_GLOBAL_MODIFIER = 1.4;
+const float PWFXP_GLOBAL_MODIFIER = 2.0;
 
 // displays one-line XP status info after each kill
 // useful while you fine tune the system.
@@ -647,8 +650,6 @@ void main()
   object oKiller = GetLastKiller();
 
 
-
-
   // only continue if killer is valid and not from same faction...
   if ((oKiller==OBJECT_INVALID) || (GetFactionEqual(oKiller, oDead))) return;
 
@@ -746,16 +747,17 @@ void main()
 //if (GetHitDice(oKiller) > 6)
 //   return;
 //      {
+
+      nXP = XPPoolGetXPAward(oGroupMbr, nXP);  
       if(nXP > 0) PWFXP_GiveXP(oGroupMbr, nXP);
 
-      if (GetLocalInt(oDead, "boss_death")== 1)
-       {
+      if (GetLocalInt(oDead, "boss_death")== 1 && nXP > 0) {
       // RewardPartyXP(50, oKiller, TRUE);
 
-       PWFXP_GiveXP(oGroupMbr, nXP);
+            PWFXP_GiveXP(oGroupMbr, nXP);
 
-       FloatingTextStringOnCreature("You have defeated a boss, and have been rewarded extra." , oKiller);
-       }
+            FloatingTextStringOnCreature("You have defeated a boss, and have been rewarded extra." , oKiller);
+      }
 //       }
 
 

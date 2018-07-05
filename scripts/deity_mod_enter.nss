@@ -21,6 +21,9 @@ void main() {
         int bNewPC  = GetLocalInt(oPC, "NEW_PC_FLAG");
 
 
+	DeleteLocalInt(oPC, "deity_cached_idx");
+	DeleteLocalInt(oPC, "deity_cache_valid");
+	
     // DM's have a much shorter list of initializations.
         if (GetIsDM(oPC)) {
                 if (bNewPC)

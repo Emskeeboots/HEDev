@@ -421,10 +421,10 @@ void main()
                 string sMsg = GetLocalString(oCaster, "spell_hook_message");
                 if (sMsg != "")
                         FloatingTextStringOnCreature(sMsg, oCaster);
-                SetModuleOverrideSpellScriptFinished();
+                //SetModuleOverrideSpellScriptFinished();
                 DeleteLocalString(oCaster, "spell_hook_message");
                 spell_debug("Deity system disallowed spell");
-                return;
+                //return;
         }
         DeleteLocalInt(oCaster, "deity_tmp_op");
 

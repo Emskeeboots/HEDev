@@ -52,6 +52,8 @@ void XPRewardDisarmTrap(object oPC, object oTrap);
 void XPRewardPickLock(object oPC, object oLocked);
 // Reward PC for defeating an adversary in combat - [FILE: _inc_util]
 void XPRewardCombat( object oKiller, object oDead, int nCRMod=0 );
+// Award PC with Role Play XP for RP in the talk channel.
+void XPRewardRolePlay (object oPC);
 
 
 
@@ -188,7 +190,7 @@ void XPSetTypeModifier(object oPC, int bDisplayForPlayer=TRUE)
             {
                 fCombatPerc += 00 * Level;
                 fDiscoveryPerc += 100 * Level;
-                fAbilityPerc += 0 * Level;
+                fAbilityPerc += 10;
                 fCraftPerc += 0 * Level;
                 fMagicPerc += 0 * Level;
             }
@@ -513,24 +515,24 @@ void XPSetTypeModifier(object oPC, int bDisplayForPlayer=TRUE)
     //SetLocalFloat(oPC, "XP_MODIFIER_QUEST", fQuestPerc);
     SetLocalFloat(oPC, "XP_MODIFIER_COMBAT", fCombatPerc);
     SetLocalFloat(oPC, "XP_MODIFIER_DISCOVERY", fDiscoveryPerc);
-   // SetLocalFloat(oPC, "XP_MODIFIER_SKILL", fAbilityPerc);
+    SetLocalFloat(oPC, "XP_MODIFIER_SKILL", fAbilityPerc);
     //SetLocalFloat(oPC, "XP_MODIFIER_CRAFT", fCraftPerc);
     //SetLocalFloat(oPC, "XP_MODIFIER_MAGIC", fMagicPerc);
-/*
+
     if(bDisplayForPlayer)
     {
          float fDelay =  GetLocalFloat(GetModule(), "DELAY_DISPLAY_START");
-        DelayCommand(fDelay+0.010,SendMessageToPC(oPC, " "));
-        DelayCommand(fDelay+0.011,SendMessageToPC(oPC, DARKRED+"Experience Modifiers:"));
-        DelayCommand(fDelay+0.012,SendMessageToPC(oPC, PINK+"Questing: 100%"));
-        DelayCommand(fDelay+0.013,SendMessageToPC(oPC, PINK+"Roleplaying: 100%"));
-        DelayCommand(fDelay+0.014,SendMessageToPC(oPC, PINK+"Combat: " + IntToString(FloatToInt(fCombatPerc)) +"%"));
-        DelayCommand(fDelay+0.015,SendMessageToPC(oPC, PINK+"Discovery: " + IntToString(FloatToInt(fDiscoveryPerc)) +"%"));
+        //DelayCommand(fDelay+0.010,SendMessageToPC(oPC, " "));
+        //DelayCommand(fDelay+0.011,SendMessageToPC(oPC, DARKRED+"Experience Modifiers:"));
+        //DelayCommand(fDelay+0.012,SendMessageToPC(oPC, PINK+"Questing: 100%"));
+        //DelayCommand(fDelay+0.013,SendMessageToPC(oPC, PINK+"Roleplaying: 100%"));
+        //DelayCommand(fDelay+0.014,SendMessageToPC(oPC, PINK+"Combat: " + IntToString(FloatToInt(fCombatPerc)) +"%"));
+        //DelayCommand(fDelay+0.015,SendMessageToPC(oPC, PINK+"Discovery: " + IntToString(FloatToInt(fDiscoveryPerc)) +"%"));
         DelayCommand(fDelay+0.016,SendMessageToPC(oPC, PINK+"Skills: " + IntToString(FloatToInt(fAbilityPerc)) +"%"));
-        DelayCommand(fDelay+0.017,SendMessageToPC(oPC, PINK+"Spells: " + IntToString(FloatToInt(fMagicPerc)) +"%"));
-        DelayCommand(fDelay+0.018,SendMessageToPC(oPC, PINK+"Crafting: " + IntToString(FloatToInt(fCraftPerc)) +"%"));
+        //DelayCommand(fDelay+0.017,SendMessageToPC(oPC, PINK+"Spells: " + IntToString(FloatToInt(fMagicPerc)) +"%"));
+        //DelayCommand(fDelay+0.018,SendMessageToPC(oPC, PINK+"Crafting: " + IntToString(FloatToInt(fCraftPerc)) +"%"));
     }
-*/
+
 }
 
 int XPRetrieveByType(object oPC, int nType=0, string campaign_id="ANY")
@@ -633,7 +635,7 @@ void XPRewardByType(string sRewardTag, object oPC, int iXPReward, int iExperienc
 
     // Modify XP granted based on Class and specific category of XP award.
     float fDiscoveryPerc    = GetLocalFloat(oPC, "XP_MODIFIER_DISCOVERY");
-//    float fAbilityPerc      = GetLocalFloat(oPC, "XP_MODIFIER_SKILL");
+    float fAbilityPerc      = GetLocalFloat(oPC, "XP_MODIFIER_SKILL");
 //    float fCraftPerc        = GetLocalFloat(oPC, "XP_MODIFIER_CRAFT");
 //    float fCombatPerc       = GetLocalFloat(oPC, "XP_MODIFIER_COMBAT");
 //    float fMagicPerc        = GetLocalFloat(oPC, "XP_MODIFIER_MAGIC");
@@ -685,15 +687,19 @@ void XPRewardByType(string sRewardTag, object oPC, int iXPReward, int iExperienc
         sExperienceFeedback = "You are rewarded for practicing your craft.";
         bDecaying           = TRUE;
     }
-    else if(iExperienceType==XP_TYPE_ABILITY)    /* Ability/Skill Use
+
+*/
+    else if(iExperienceType==XP_TYPE_ABILITY)    // Ability/Skill Use
     {
-        iXPReward = iXPReward/(nRewardCnt + 1);
+        iXPReward = 10;
+//      iXPReward = iXPReward/(nRewardCnt + 1);
         if (fAbilityPerc > 0.0) {
-                iFinalXP            = FloatToInt(IntToFloat(iXPReward) * (fAbilityPerc)/100.0);
+              iFinalXP            = FloatToInt(IntToFloat(iXPReward) * (fAbilityPerc)/100.0);
         }
         sExperienceFeedback = "You are rewarded for fruitful use of your abilities.";
         bDecaying           = TRUE;
     }
+    /*
     else if(iExperienceType==XP_TYPE_COMBAT)    /* Combat
     {
         if (fCombatPerc > 0.0) {
@@ -1083,6 +1089,10 @@ int XPPoolGetXPAward(object oPC, int nAmount) {
                 nPool = GetPersistentInt(oPC, "XP_POOL_TOTAL");
         }
 
+        // DEBUG - take this out later
+        WriteTimestampedLogEntry("DEBUG - xp pool " + GetName(oPC) + " now " + IntToString(nNow) + " last " + IntToString(nDay) 
+                + " pool " + IntToString(nPool) + " xp " + IntToString(nAmount));
+
         // check if nAmount is < pool.  If so then we can just do it.
         if (nAmount <= nPool) {
                 SetPersistentInt(oPC, "XP_POOL_TOTAL", nPool - nAmount);
@@ -1102,4 +1112,33 @@ int XPPoolGetXPAward(object oPC, int nAmount) {
         // Could send feedback here.
         return 1;  // XPGetMinXP(oPC);
 }
+
+/* Function for automatically rewarding players for enagaging in text assisted roleplay.
+   Called every in-game hour from tb_pc_hourly.  AUTHOR: ANDREI */
+
+void XPRewardRolePlay(object oPC) {
+
+    /*  ---- XP reward WITH database tracking ----
+
+    string sRewardTag = TAG_XP+"ROLEPLAY";
+    int iRewardBase = 10;
+    SendMessageToPC(oPC, "DEBUG: XPRewardRolePlay called from: tb_pc_hourly.");
+
+    XPRewardByType(sRewardTag, oPC, iRewardBase, 4, "");*/
+
+    /* ---- XP reward WITHOUT database tracking ---- */
+
+    int iRPRewardCap = 10;
+    int iRPReward = 2*GetLocalInt(oPC, "CHAT_COUNT");
+
+    if (iRPReward < iRPRewardCap) {
+        SendMessageToPC(oPC, PINK+"You are rewarded for role-playing your character.");
+        GiveXPToCreature(oPC, iRPReward);
+    }
+    else {
+        SendMessageToPC(oPC, PINK+"You are rewarded for role-playing your character.");
+        GiveXPToCreature(oPC, iRPRewardCap);
+    }
+}
 // END XP ......................................................................
+

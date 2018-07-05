@@ -31,7 +31,6 @@ object findNearbyAltar(object oPC) {
         return OBJECT_INVALID;
 }
 
-/*
 void main() {
         object oPC = OBJECT_SELF;
         int nOp = GetLocalInt(oPC, "deity_tmp_op");
@@ -83,6 +82,8 @@ void main() {
 
                 // No deity or lapsed then no spells.
                 if (nStand <= 0) {
+			WriteTimestampedLogEntry("DEBUG: " + GetName(oPC) + " Deity spell check: " + IntToString(nStand)
+						 + " '" + GetDeity(oPC) + "' " + IntToString(GetDeityIndex(oPC))); 
                         SetLocalString(oPC, "spell_hook_message", "You feel spiritually uneasy and empty.");
                         SetExecutedScriptReturnValue(TRUE);
                 }
@@ -93,11 +94,11 @@ void main() {
                 int nDeity = GetDeityIndex(oPC);
                 // if in combat do combat prayer
 
-        if (nDeity < 0) {
-            SendMessageToPC(oPC, "You have no deity to which to pray!");
-            return;
-
-        }
+		if (nDeity < 0) {
+			SendMessageToPC(oPC, "You have no deity to which to pray!");
+			return;
+			
+		}
                 if (GetIsInCombat(oPC)) {
                         deityMiracleCheck(oPC);
                 } else {
@@ -162,4 +163,3 @@ void main() {
         }
 
 }
-*/
